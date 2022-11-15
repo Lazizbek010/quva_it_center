@@ -1,0 +1,53 @@
+.nav {
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 160px;
+    height: 80px;
+}
+.logo img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+.navbar__contact, .navbar__contact h3 {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.navbar__contact h3 {
+    gap: 8px;
+}
+.navbar__contact h3 svg{
+    width: 20px;
+    height: 20px;
+}
+.navbar__contact h3 span{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+/*  Meida for Mobile devices */
+@media (max-width:767px){
+    .nav {
+        padding: 24px 0;
+    }
+    .navbar{
+        justify-content: center;
+    }
+    .navbar__contact{
+        display: none;
+    }
+}

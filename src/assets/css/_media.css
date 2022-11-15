@@ -1,0 +1,6 @@
+/*  Meida for Mobile devices */
+@media (max-width:767px) {
+    body{
+        background: linear-gradient(270deg, #6834D7 0%, #622DD3 100%);
+    }
+}
