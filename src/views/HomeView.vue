@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <header class="header">
+      
       <!--  Hero Section -->
       <div class="bg-hero">
         <div class="container hero">
