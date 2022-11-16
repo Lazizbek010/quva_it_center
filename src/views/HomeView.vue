@@ -38,6 +38,9 @@ import CourseSection from '@/components/CourseComponent.vue'
 import EduPriceSection from '@/components/EducationPriseComponent.vue'
 import ContactSection from '@/components/ContactComponent.vue'
 
+import { mapGetters, mapActions } from 'vuex'
+
+
 export default {
   name: "HomeView",
   components: {
@@ -51,5 +54,14 @@ export default {
     EduPriceSection,
     ContactSection
   },
+  computed: {
+    ...mapGetters(['getMainList'])
+  },
+  mounted() {
+    this.fetchMainList()
+  },
+  methods: {
+    ...mapActions(['fetchMainList'])
+  }
 };
 </script>

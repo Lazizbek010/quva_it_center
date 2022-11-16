@@ -1,27 +1,50 @@
 <template>
-    <div class="nav">
-        <div class="container navbar">
-            <div class="logo">
-                <img src="images/logo.svg" alt="logo">
-            </div>
-            <div class="navbar__contact">
-                <h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke="#fff" d="M6.292.667H3.333A2.667 2.667 0 0 0 .667 3.333V6c0 7.364 5.97 13.333 13.333 13.333h2.667a2.667 2.667 0 0 0 2.666-2.666v-1.843c0-.505-.285-.967-.737-1.192l-3.22-1.611a1.333 1.333 0 0 0-1.862.77l-.397 1.192a1.612 1.612 0 0 1-1.846 1.071A8.063 8.063 0 0 1 4.946 8.73c-.16-.797.3-1.589 1.071-1.846l1.478-.492c.661-.22 1.041-.913.872-1.589l-.781-3.125A1.333 1.333 0 0 0 6.292.667Z" opacity=".9"/></svg>
-                    <span>+998 (902) 631 09 77</span>
-                </h3>
-                <h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke="#fff" stroke-linecap="square" d="m6 8.667 4 4 4-4M19.333 10A9.333 9.333 0 1 1 .667 10a9.333 9.333 0 0 1 18.666 0Z" opacity=".9"/></svg>
-                    <span>Записаться на курс</span>
-                </h3>
-            </div>
-        </div>
+  <div class="nav">
+    <div class="container navbar">
+      <div class="logo">
+        <img src="images/logo.svg" alt="logo" />
+      </div>
+      <div class="navbar__contact">
+        <h3>
+          <img v-if="getContactList" :src="`https://foritcenter.herokuapp.com/${getContactList.logo}`" >
+          <span v-if="getContactList">{{getContactList.phone}}</span>
+        </h3>
+        <h3>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="none"
+          >
+            <path
+              stroke="#fff"
+              stroke-linecap="square"
+              d="m6 8.667 4 4 4-4M19.333 10A9.333 9.333 0 1 1 .667 10a9.333 9.333 0 0 1 18.666 0Z"
+              opacity=".9"
+            />
+          </svg>
+          <span>Записаться на курс</span>
+        </h3>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'NAvigationComponent',
-    }
+import { mapGetters, mapActions} from 'vuex'
+
+export default {
+  name: "NAvigationComponent",
+  computed: {
+    ...mapGetters(["getContactList"]),
+  },
+  mounted() {
+    this.fetchContacts();
+  },
+  methods: {
+    ...mapActions(["fetchContacts"]),
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
