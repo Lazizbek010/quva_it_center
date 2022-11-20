@@ -1,14 +1,14 @@
 <template>
     <section class="bg-education-price">
         <div class="container" v-if="getCostEdu">
-          <h2 class="footer__titles">{{eduData.title}}</h2>
-            <p class="education-price-discount">{{eduData.description}}</p>
-          <div class="education-prices">
+          <h2 class="footer__titles" v-if="eduData">{{eduData.title}}</h2>
+            <p class="education-price-discount" v-if="eduData">{{eduData.description}}</p>
+          <div class="education-prices" v-if="eduData && eduData.blocks && eduData.blocks.length">
             <div class="education-price" v-for="(data, i) in eduData.blocks" :key="i">
               <div class="education-price__card">
                 <div class="education-price__card__img">
                   <div class="education-price__card__header">
-                    <h1>{{data.title}}</h1>
+                    <h1 v-if="data && data.title">{{data.title}}</h1>
                     <span class="subtitle">{{data.subTitle}}</span>
                   </div>
                   <p>{{data.price}}</p>

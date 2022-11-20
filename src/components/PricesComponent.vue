@@ -3,7 +3,6 @@
         <div class="container">
           <div class="prices">
             <div class="price" v-if="getMoreInfo /*&& getMoreInfo.length*/">
-              {{getMoreInfo}}
               <div class="price__info" 
               v-for="(data, i) in getMoreInfo" :key="i">
                 <h3>{{data.title}}</h3>
