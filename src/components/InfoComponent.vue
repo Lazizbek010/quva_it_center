@@ -2,12 +2,12 @@
      <div class="bg-info">
         <div class="container">
           <div class="info__title">Чему вы научитесь на курсе?</div>
-          <div class="info">
+          <div class="info" v-if="learnData">
             <div class="info__left">
               <div class="info__left__text">
-                <h5>Становитесь специалистом</h5>
+                <h5>{{learnData.title}}</h5>
                 <p>
-                  К концу обучения вы обретете все необходимые навыки для работы
+                  {{learnData.description}}
                 </p>
               </div>
               <div class="info__left__img">
@@ -16,11 +16,11 @@
             </div>
             <div class="info__right">
               <ul class="info__right__list">
-                <li>
+                <li v-for="(list, i) in learnData.info" :key="i">
                   <img src="images/loading.png" alt="" />
-                  <span>Получать потенциальных клиентов с рекламы</span>
+                  <span>{{list.text}}</span>
                 </li>
-                <li>
+                <!-- <li>
                   <img src="images/loading.png" alt="" />
                   <span>Работать с аукционом Goolge</span>
                 </li>
@@ -52,7 +52,7 @@
                 <li>
                   <img src="images/loading.png" alt="" />
                   <span>Формировать конкурентные предложения</span>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -62,7 +62,15 @@
 
 <script>
     export default {
-        
+      name: 'InfoComponent',
+      props: {
+        getLearnCourse: []
+      },
+      computed: {
+        learnData() {
+          return this.getLearnCourse[0] 
+        }
+      },
     }
 </script>
 

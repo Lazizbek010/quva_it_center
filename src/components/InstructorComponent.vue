@@ -2,22 +2,23 @@
     <div class="bg-instructor">
         <div class="container">
           <h2 class="instructor__title">Преподаватель курса</h2>
-          <div class="instructor__info">
+          <div class="instructor__info" v-if="getCourseInstruktor">
             <div class="instructor__info__text">
-              <h4>Дмитрий Клименко</h4>
+              <h4>{{getCourseInstruktor.name}}</h4>
               <div class="instructor__info__line"></div>
-              <h6>Владелец</h6>
-              <h5>3 Clicks Sellers agency</h5>
+              <h6>{{getCourseInstruktor.position}}</h6>
+              <h5>{{getCourseInstruktor.level_info}}</h5>
               <p class="instructor__info__stars">
                 <span>*</span>
                 <span>*</span>
                 <span>*</span>
               </p>
               <p class="instructor__info__contects">
-                <span>Team Lead</span> в американском агенстве
+                {{getCourseInstruktor.description}}
+                <!-- <span>Team Lead</span> в американском агенстве
                 интернет-маркетинга <span>“Cash Offer Option”</span> <br />
                 Входит в <span>ТОП-50</span> специалистов по Контекстной рекламе
-                в СНГ (по рейтингу платформы <span>Freelancehunt)</span>
+                в СНГ (по рейтингу платформы <span>Freelancehunt)</span> -->
               </p>
             </div>
             <div class="instructor__info__img">

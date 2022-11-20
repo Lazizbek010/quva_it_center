@@ -1,19 +1,20 @@
 <template>
   <div class="bg-hero">
-    <div class="container hero">
+    <div class="container hero" v-if="getMainList && getMainList.length">
       <div class="hero__left">
-        <h1>Офлайн-курс по поисковым рекламным кампаниям в Google</h1>
+        <h1>{{getMainList[0].title}}</h1>
         <p>
-          Курс познакомит с Контекстной рекламой и Поисковыми кампаниями.
-          Уникальная возможность выйти на приланс и работать из дому.
+          {{getMainList[0].description}}
         </p>
         <div class="hero__btns">
           <button>Записаться на курс</button>
           <button>Узнать больше</button>
         </div>
       </div>
+      {{ data }}
       <div class="hero__right">
-        <img src="images/hero-img.png" alt="hero-img" />
+        <!-- Rasmni APIdan olish   -->
+        <img  src="images/hero-img.png" alt="hero-img" />
       </div>
     </div>
   </div>
@@ -21,7 +22,13 @@
 
 <script>
 export default {
-    name: 'HeroComponent'
+    name: 'HeroComponent',
+    props: {
+      getMainList: {
+        type: Array,
+        required: true
+      },
+    },
 };
 </script>
 

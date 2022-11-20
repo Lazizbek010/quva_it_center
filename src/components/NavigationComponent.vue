@@ -5,9 +5,9 @@
         <img src="images/logo.svg" alt="logo" />
       </div>
       <div class="navbar__contact">
-        <h3>
-          <img v-if="getContactList" :src="`https://foritcenter.herokuapp.com/${getContactList.logo}`" >
-          <span v-if="getContactList">{{getContactList.phone}}</span>
+        <h3 v-if="getContactList">
+          <img :src="getContactList.logo" >
+          <span>{{getContactList.phone}}</span>
         </h3>
         <h3>
           <svg

@@ -2,20 +2,20 @@
     <section class="bg-course">
         <div class="container">
           <h2 class="footer__titles">Что будет на курсе?</h2>
-          <div class="course-items">
-            <div class="course-item">
+          <div class="course-items" v-if="getHaveCourse">
+            <div class="course-item" v-for="(item, i) in getHaveCourse" :key="i">
               <div class="course-item__top">
                 <div class="course-item__top__triangle">
                   <img src="images/course-item__top__triangle.png" alt="">
                 </div>
                 <div class="course-item__top__shape"></div>
-                <h3>Старт</h3>
+                <h3>{{item.title}}</h3>
               </div>
               <p>
-                Вы знакомитесь с преподавателем и сокурсниками в онлайн-чате
+               {{item.description}}
               </p>
             </div>
-            <div class="course-item">
+            <!-- <div class="course-item">
               <div class="course-item__top">
                 <div class="course-item__top__triangle">
                   <img src="images/course-item__top__triangle.png" alt="">
@@ -50,7 +50,7 @@
                 Делаете домашнее задание. Получаете обратную связь от
                 преподавателя
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -58,7 +58,10 @@
 
 <script>
     export default {
-        
+        name: 'Coursecomponent',
+        props: {
+          getHaveCourse: []
+        },
     }
 </script>
 

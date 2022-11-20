@@ -249,6 +249,7 @@ body {
 }
 
 .info__left__text h5 {
+    width: 339px;
     margin-bottom: 16px;
     font-weight: 700;
     font-size: 23px;
@@ -692,11 +693,11 @@ body {
     background-image: url('../img/edu-bg-card-2.png');
 }
 
-.education-price__card__img-right h1 {
+.education-price__card__header {
     position: relative;
 }
 
-.education-price__card__img-right h1::after {
+.education-price__card__header .subtitle::after {
     content: '+ Reservation';
     position: absolute;
     display: block;

@@ -2,25 +2,25 @@
   <div class="home">
     <header class="header">
       <!--  Hero Section -->
-      <HeroSection />
+      <HeroSection :getMainList="getMainList"/>
       <!--  About Section-->
-      <AboutSection />
+      <AboutSection :getForCourse="getForCourse"/>
     </header>
     <main>
       <!-- Info Section -->
-      <InfoSection />
+      <InfoSection :getLearnCourse="getLearnCourse"/>
       <!-- Course-Prices Section-->
-      <PricesSection />
+      <PricesSection :getMoreInfo="getMoreInfo"/>
       <!-- Services Section -->
-      <ServiceSection />
+      <ServiceSection :getCourseProgram="getCourseProgram"/>
       <!-- Course instructor Section -->
-      <InstructorSection />
+      <InstructorSection :getCourseInstruktor="getCourseInstruktor"/>
     </main>
     <footer class="site-footer">
       <!-- Course Section -->
-      <CourseSection /> 
+      <CourseSection :getHaveCourse="getHaveCourse"/> 
       <!-- Education Section -->
-      <EduPriceSection />
+      <EduPriceSection :getCostEdu="getCostEdu"/>
       <!-- Contact Section -->
       <ContactSection />
     </footer>
@@ -38,8 +38,7 @@ import CourseSection from '@/components/CourseComponent.vue'
 import EduPriceSection from '@/components/EducationPriseComponent.vue'
 import ContactSection from '@/components/ContactComponent.vue'
 
-import { mapGetters, mapActions } from 'vuex'
-
+import { mapActions, mapGetters} from 'vuex'
 
 export default {
   name: "HomeView",
@@ -54,14 +53,21 @@ export default {
     EduPriceSection,
     ContactSection
   },
-  computed: {
-    ...mapGetters(['getMainList'])
-  },
-  mounted() {
-    this.fetchMainList()
-  },
   methods: {
-    ...mapActions(['fetchMainList'])
+    ...mapActions(['fetchMainList', 'fetchForCourse', 'fetchLearnCourse', 'fetchMoreInfo', "fetchCourseProgram",'fetchCourseInstruktor','fetchHaveCourse','fetchCostEdu'])
+  },
+  mounted(){
+    this.fetchMainList()
+    this.fetchForCourse()
+    this.fetchLearnCourse()
+    this.fetchMoreInfo()
+    this.fetchCourseProgram() /* Olinmadi */
+    this.fetchCourseInstruktor() /* Olinmadi */
+    this.fetchHaveCourse() /* Olinmadi */
+    this.fetchCostEdu() /* Olinmadi */
+  },
+  computed: {
+    ...mapGetters(['getMainList', 'getForCourse','getLearnCourse', 'getMoreInfo', "getCourseProgram",'getCourseInstruktor','getHaveCourse','getCostEdu'])
   }
 };
 </script>

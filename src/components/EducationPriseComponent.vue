@@ -1,21 +1,24 @@
 <template>
     <section class="bg-education-price">
-        <div class="container">
-          <h2 class="footer__titles">Стоимость обучения</h2>
-            <p class="education-price-discount">20% студентов получат работу с заработком от 500$/мес.</p>
+        <div class="container" v-if="getCostEdu">
+          <h2 class="footer__titles">{{eduData.title}}</h2>
+            <p class="education-price-discount">{{eduData.description}}</p>
           <div class="education-prices">
-            <div class="education-price">
+            <div class="education-price" v-for="(data, i) in eduData.blocks" :key="i">
               <div class="education-price__card">
                 <div class="education-price__card__img">
-                  <h1>Standart</h1>
-                  <p>5000 грн.</p>
+                  <div class="education-price__card__header">
+                    <h1>{{data.title}}</h1>
+                    <span class="subtitle">{{data.subTitle}}</span>
+                  </div>
+                  <p>{{data.price}}</p>
                 </div>
                 <ul class="education-price__list">
-                  <li>
+                  <li v-for="(role, i) in data.roles" :key="i">
                     <img src="images/check.svg" alt="">
-                    <span>Доступ к видео урокам</span>
+                    <span>{{role.text}}</span>
                   </li>
-                  <li>
+                  <!-- <li>
                     <img src="images/check.svg" alt="">
                     <span>Онлайн чат</span>
                   </li>
@@ -30,13 +33,13 @@
                   <li>
                     <img src="images/x.svg" alt="">
                     <span>Бронирование места</span>
-                  </li>
+                  </li> -->
                 </ul>
                 <button>Оплатить</button>
               </div>
-              <p class="education-price__bottom">При оплате всего курса сразу</p>
+              <p class="education-price__bottom">{{data.description}}</p>
             </div>
-            <div class="education-price">
+            <!-- <div class="education-price">
               <div class="education-price__card">
                 <div class="education-price__card__img education-price__card__img-right">
                   <h1>Standart</h1>
@@ -69,7 +72,7 @@
               <p class="education-price__bottom">При бронировании места. Стоимость
 брони 250 гривен, стоимость курса
 оплачивается перед первым занятием</p>
-            </div>
+            </div> -->
         </div>
         </div>
       </section>
@@ -77,7 +80,15 @@
 
 <script>
     export default {
-        
+      name: 'EduPriceComponent',
+      props: {
+        getCostEdu: []
+      },
+      computed: {
+        eduData() {
+          return this.getCostEdu[0] 
+        }
+      },
     }
 </script>
 

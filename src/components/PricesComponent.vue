@@ -2,16 +2,19 @@
     <div class="bg-prices">
         <div class="container">
           <div class="prices">
-            <div class="price">
-              <div class="price__info">
-                <h3>Как проходит обучение?</h3>
+            <div class="price" v-if="getMoreInfo /*&& getMoreInfo.length*/">
+              {{getMoreInfo}}
+              <div class="price__info" 
+              v-for="(data, i) in getMoreInfo" :key="i">
+                <h3>{{data.title}}</h3>
                 <p>
-                  Обучение проходит офлайн, курс поделён на 5 модулей, что
-                  позволит легко запомнить информацию
+                 {{data.description}}
                 </p>
               </div>
             </div>
-            <div class="price">
+            <!-- BG IMAGE QOYISH ??? -->
+
+            <!-- <div class="price">
               <div class="price__info">
                 <h3>Сколько стоит курс?</h3>
                 <p>
@@ -25,7 +28,7 @@
                 <h3>Трудоустройство</h3>
                 <p>20% студентов получат работу в агенстве</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -33,7 +36,10 @@
 
 <script>
     export default {
-        
+        name: 'Pricecomponent',
+        props: {
+          getMoreInfo: [],
+        },
     }
 </script>
 
