@@ -1,5 +1,6 @@
 <template>
     <div class="bg-instructor">
+      <div class="instructor-shape"></div>
         <div class="container">
           <h2 class="instructor__title">Преподаватель курса</h2>
           <div class="instructor__info">

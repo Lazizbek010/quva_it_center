@@ -1,6 +1,12 @@
 <template>
     <div class="bg-about">
         <div class="about">
+          <div class="about-shape1">
+            <img src="@/assets/img/formshape1.png" alt="">
+          </div>
+          <div class="about-shape2">
+            <img src="@/assets/img/formshape2.png" alt="">
+          </div>
           <h1 class="about__title">Кому подойдет этот курс?</h1>
           <div class="about__info">
             <div class="about__info__item">

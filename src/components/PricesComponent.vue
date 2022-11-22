@@ -1,8 +1,12 @@
 <template>
     <div class="bg-prices">
+        <div class="prices-shape"></div>
         <div class="container">
           <div class="prices">
             <div class="price">
+              <div class="price-absolute">
+                <img src="@/assets/img/bg-price1.png" alt="">
+              </div>
               <div class="price__info">
                 <h3>Как проходит обучение?</h3>
                 <p>
@@ -12,6 +16,9 @@
               </div>
             </div>
             <div class="price">
+              <div class="price-absolute">
+                <img src="@/assets/img/bg-price2.png" alt="">
+              </div>
               <div class="price__info">
                 <h3>Сколько стоит курс?</h3>
                 <p>
@@ -21,6 +28,9 @@
               </div>
             </div>
             <div class="price">
+              <div class="price-absolute">
+                <img src="@/assets/img/bg-price3.png" alt="">
+              </div>
               <div class="price__info">
                 <h3>Трудоустройство</h3>
                 <p>20% студентов получат работу в агенстве</p>

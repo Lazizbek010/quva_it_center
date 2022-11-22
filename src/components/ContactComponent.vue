@@ -3,6 +3,12 @@
         <div class="container">
           <h2 class="footer__titles">Запишитесь на курс сейчас</h2>
           <form action="#" class="form">
+            <div class="form__shape1">
+              <img src="@/assets/img/formshape1.png" alt="">
+            </div>
+            <div class="form__shape2">
+              <img src="@/assets/img/formshape2.png" alt="">
+            </div>
             <label for="name">Ваше имя</label>
             <div class="input-form">
               <img src="images/user.svg" alt="">

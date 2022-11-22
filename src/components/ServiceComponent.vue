@@ -1,5 +1,6 @@
 <template>
     <div class="bg-service">
+      <div class="service-shape"></div>
         <div class="container service">
           <h1 class="service__title">Програма курса</h1>
           <p class="service__text">

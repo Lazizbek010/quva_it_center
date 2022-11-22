@@ -1,5 +1,11 @@
 <template>
     <section class="bg-course">
+      <div class="bg-course__shape1">
+        <img src="@/assets/img/course-shape1.png" alt="">
+      </div>
+      <div class="bg-course__shape2">
+        <img src="@/assets/img/course-shape2.png" alt="">
+      </div>
         <div class="container">
           <h2 class="footer__titles">Что будет на курсе?</h2>
           <div class="course-items">
