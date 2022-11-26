@@ -60,7 +60,7 @@
     export default {
         name: 'Coursecomponent',
         props: {
-          getHaveCourse: []
+          getHaveCourse: {}
         },
     }
 </script>

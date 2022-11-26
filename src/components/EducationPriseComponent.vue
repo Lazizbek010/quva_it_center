@@ -82,7 +82,7 @@
     export default {
       name: 'EduPriceComponent',
       props: {
-        getCostEdu: []
+        getCostEdu: {}
       },
       computed: {
         eduData() {

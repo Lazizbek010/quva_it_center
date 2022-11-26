@@ -31,7 +31,10 @@
 
 <script>
     export default {
-        
+      name: 'Instructorcomponent',
+      props: {
+        getCourseInstruktor: {},
+      },
     }
 </script>
 

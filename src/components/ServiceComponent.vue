@@ -1,14 +1,13 @@
 <template>
     <div class="bg-service">
         <div class="container service" v-if="getCourseProgram">
-          <h1 class="service__title">{{getCourseProgram.title}}</h1>
-          {{getCourseProgram}}
-          <p class="service__text">
-           {{getCourseProgram.description}}
+          <h1 class="service__title" v-if="dataCourse">{{dataCourse.title}}</h1>
+          <p class="service__text" v-if="dataCourse">
+           {{dataCourse.description}}
           </p>
-          <ul class="service__list">
+          <ul class="service__list" v-if="dataCourse">
             <li class="service__list__item"
-            v-for="(module, i) in getCourseProgram.modules" :key="i">
+            v-for="(module, i) in dataCourse.modules" :key="i">
               <div class="service__list__item-left">
                 <span>{{module.module_number}} модуль</span>
                 <span>{{module.module_text}}</span>
@@ -62,11 +61,11 @@
     export default {
       name: 'ServiceComponent',
       props: {
-        getCourseProgram: []
+        getCourseProgram: {}
       },
       computed: {
         dataCourse() {
-          // return this.getCourseProgram[0] 
+          return this.getCourseProgram[0] 
         }
       },
     }
