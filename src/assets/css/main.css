@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @import "./_nav.css";
 @import "./_base.css";
+@import "./_font.css";
 @import "./_media.css";
 
 

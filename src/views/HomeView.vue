@@ -39,6 +39,7 @@ import EduPriceSection from '@/components/EducationPriseComponent.vue'
 import ContactSection from '@/components/ContactComponent.vue'
 
 import { mapActions, mapGetters} from 'vuex'
+import AOS from "aos";
 
 export default {
   name: "HomeView",
@@ -58,6 +59,8 @@ export default {
   },
   mounted(){
     this.fetchMainList()
+     AOS.init()
+    AOS.init()
     this.fetchForCourse()
     this.fetchLearnCourse()
     this.fetchMoreInfo()

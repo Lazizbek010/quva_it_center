@@ -1,6 +1,437 @@
+@media (max-width:1052px) {
+    .hero {
+        flex-direction: column;
+        padding-top: 70px;
+    }
+
+    .hero__btns {
+        justify-content: center;
+    }
+
+    .about {
+        border: none;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .prices {
+        flex-wrap: wrap;
+        height: 550px;
+    }
+
+    .price {
+        width: 45%;
+        align-self: flex-start;
+    }
+
+    .bg-service {
+        padding: 0 10px;
+    }
+
+    .service {
+        width: 100%;
+    }
+    .instructor__info {
+        padding: 0;
+    }
+}
+
+@media (max-width:1000px) {
+    .info {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .info__left {
+        margin-top: 40px;
+    }
+
+    .info__title {
+        margin-bottom: 80px;
+    }
+   
+}
+
+@media (max-width:950px) {
+    .about__info {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .about__info__item {
+        width: 45%;
+    }
+
+    .bg-info {
+        padding-top: 4rem;
+    }
+
+    .service {
+        padding: 3rem 4rem 4.5rem;
+    }
+    .instructor__info__text {
+        padding: 20px;
+    }
+}
+@media (max-width:890px){
+    .instructor__info__img {
+        width: 400px;
+        height: 600px;
+    }
+}
+@media (max-width:822px){
+    .bg-instructor {
+        transform: translateY(0px);
+        padding-bottom: 70px;
+    }
+    .instructor__info {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .instructor__info__img {
+        width: 468px;
+        height: 500px;
+    }
+}
 /*  Meida for Mobile devices */
 @media (max-width:767px) {
-    body{
-        background: linear-gradient(270deg, #6834D7 0%, #622DD3 100%);
+    body {
+        /* background: linear-gradient(270deg, #6834D7 0%, #622DD3 100%); */
+        background: #6834D7;
+    }
+
+    .about__info__item {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .bg-info {
+        padding-bottom: 150px;
+    }
+
+    .info__left {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 40px;
+        padding: 18px;
+    }
+
+    .bg-prices {
+        padding-top: 60px;
+    }
+
+    .prices-shape {
+        display: none;
+    }
+
+    .price-absolute {
+        display: none;
+    }
+
+    .prices {
+        column-gap: 20px;
+        row-gap: 30px;
+        height: auto;
+        justify-content: space-around;
+    }
+
+    .price {
+        width: 304px;
+        height: 200px;
+    }
+
+    .price:nth-child(1) {
+        align-self: flex-start;
+    }
+
+    .price:nth-child(2) {
+        align-self: flex-start;
+    }
+
+    .price:nth-child(3) {
+        align-self: flex-start;
+    }
+
+    .service {
+        background: transparent;
+        padding: 0;
+    }
+    .service-shape{
+        display: none;
+    }
+    .service__title {
+        color: #FFFFFF;
+        opacity: 0.95;
+        margin-bottom: 32px;
+    }
+
+    .service__text {
+        color: #fff;
+        opacity: 0.9;
+        text-align: center;
+    }
+
+    .service__list__item {
+        background: #fff;
+    }
+    .service__list__item-left {
+        gap: 15px;   
+    }
+    .instructor__title{
+        color: #FFFFFF;
+        opacity: 0.95;
+    }
+    .instructor__info__text::before{
+        background: #622DD3;
+    }
+    .instructor__info__text h4,
+    .instructor__info__text h6,
+    .instructor__info__text h5,
+    .instructor__info__stars span,
+    .instructor__info__contects{
+        color: #fff;
+    }
+    .instructor-shape{
+        display: none;
+    }
+    .bg-education-price .footer__titles{
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width:665px) {
+    .hero__left h1 {
+        font-size: 3.5rem;
+        font-weight: 500;
+        line-height: 38px;
+    }
+
+    .about__info {
+        padding: 40px 0;
+    }
+
+    .about__title {
+        font-size: 40px;
+        line-height: 38px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width:648px) {
+    .prices {
+        flex-direction: column;
+    }
+
+    .price:nth-child(1) {
+        align-self: flex-start;
+    }
+
+    .price:nth-child(2) {
+        align-self: flex-end;
+    }
+
+    .price:nth-child(3) {
+        align-self: flex-start;
+    }
+    .service__list__item-left span{
+        font-size: 14px;
+    }
+    .service__list__item-left-about{
+        display: none;
+    }
+    .service__list{
+        gap: 17px;
+    }
+    .instructor__info__text{
+        width: 100%;
+        padding: 16px 24px;
+    } 
+    .bg-contact {
+        padding-top: 150px;
+        padding-bottom: 180px;
+    }
+    .bg-contact .footer__titles{
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width:610px) {
+    .hero__left {
+        padding-top: 30px;
+    }
+
+    .hero__btns {
+        flex-direction: column;
+    }
+
+    .hero__right {
+        width: 100%;
+        height: auto;
+    }
+
+    .about {
+        padding: 0 10px;
+    }
+
+    .info__left__img {
+        display: none;
+    }
+    .instructor__info__img {
+        width: 260px;
+        height: 310px;
+        margin: 0 auto;
+    }
+    .instructor__info__img img{
+        width: 260px;
+        height: 325px;
+    }
+    .course-item__top{
+        background: linear-gradient(90deg, #531ACA -422.5%, #6D3ADA -55.43%, #5D16D1 109%)
+    }
+    .bg-education-price .footer__titles{
+        margin-bottom: 40px;
+    }
+    .bg-contact {
+        padding-top: 130px;
+        padding-bottom: 150px;
+    }
+}
+
+@media (max-width:520px) {
+    .about__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    .bg-hero{
+        padding-bottom: 14rem;
+    }
+    .info__left {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        height: 220px;
+    }
+
+    .info__title {
+        font-size: 34px;
+        line-height: 36px;
+    }
+    .bg-instructor {
+        padding-bottom: 40px;
+    }
+    .instructor__title{
+        font-size: 30px;
+        line-height: 32px;
+    }
+    .footer__titles{
+        opacity: 0.95;
+        font-size: 38px;
+        line-height: 46px;
+    }
+    .bg-course{
+        padding-top: 100px;
+    }
+    .course-items{
+        gap: 42px;
+    }
+    .footer__titles{
+        margin-bottom: 60px;
+    }
+    .bg-course__shape2,
+    .bg-course__shape1 {
+    display: none;
+    }
+    .bg-education-price .footer__titles{
+        margin-bottom: 32px;
+    }
+    .education-price-discount{
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    .bg-education-price{
+        padding-top: 150px;
+    }
+    .bg-contact .footer__titles{
+        margin-bottom: 40px;
+    }
+    .form {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+    .form-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width:420px) {
+    .bg-hero{
+        padding-bottom: 10rem;
+    }
+    .hero__left h1 {
+        font-size: 20px;
+        line-height: 28px;
+        opacity: 0.8;
+    }
+
+    .hero__left p {
+        display: none;
+    }
+
+    .about__info {
+        padding: 10px 0;
+    }
+
+    .about__title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .about__info__item {
+        width: 100%;
+    }
+    .bg-prices{
+        padding-bottom: 10rem;
+    }
+    .bg-info {
+        padding-top: 0;
+    }
+
+    .info__title {
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 30px;
+    }
+    .service__title{
+        font-size: 34px;
+        line-height: 36px;
+    }
+    .service__text{
+        display: none;
+    }
+    .instructor__title{
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 32px;
+    }
+    .footer__titles {
+        text-align: center;
+        font-size: 3rem;
+        line-height: 28px;
+        margin-bottom: 4rem;
+    }
+    .course-items{
+        gap: 32px;
+    }
+    .course-item {
+        width: 100%;
+    }
+    .bg-education-price{
+        padding-top: 100px;
+    }
+    .bg-contact {
+        padding-top: 56px;
+        padding-bottom: 205px;
     }
 }

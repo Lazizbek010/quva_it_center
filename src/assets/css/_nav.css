@@ -40,13 +40,20 @@
     opacity: 0.9;
 }
 /*  Meida for Mobile devices */
-@media (max-width:767px){
+@media (max-width:610px){
     .nav {
         padding: 24px 0;
     }
     .navbar{
-        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
     }
+    .navbar__contact{
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+@media (max-width:500px){
     .navbar__contact{
         display: none;
     }

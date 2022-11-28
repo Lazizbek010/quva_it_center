@@ -1,9 +1,12 @@
 <template>
     <div class="bg-instructor">
+      <div class="instructor-shape"></div>
         <div class="container">
           <h2 class="instructor__title">Преподаватель курса</h2>
           <div class="instructor__info" v-if="getCourseInstruktor">
-            <div class="instructor__info__text">
+            <div class="instructor__info__text"
+            data-aos="zoom-in-right"
+            data-aos-duration="1700">
               <h4>{{getCourseInstruktor.name}}</h4>
               <div class="instructor__info__line"></div>
               <h6>{{getCourseInstruktor.position}}</h6>
@@ -21,7 +24,9 @@
                 в СНГ (по рейтингу платформы <span>Freelancehunt)</span> -->
               </p>
             </div>
-            <div class="instructor__info__img">
+            <div class="instructor__info__img"
+            data-aos="fade-up-left"
+            data-aos-duration="1700">
               <img src="images/instructor-img.png" alt="" />
             </div>
           </div>
