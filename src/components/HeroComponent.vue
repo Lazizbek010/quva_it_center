@@ -78,6 +78,7 @@
         <img  src="images/hero-img.png" alt="hero-img" />
       </div>
     </swiper-slide>
+    </swiper>
   </div>
 </template>
 
