@@ -69,7 +69,6 @@ body {
 .header {
     background: linear-gradient(90deg, #531ACA 0%, #6D3ADA 69.06%, #5D16D1 100%);
 }
-
 .bg-hero {
     padding: 7rem 0 18rem 0;
 }
@@ -155,11 +154,14 @@ body {
 .about {
     width: 1024px;
     margin: 0 auto;
-    border-radius: 32px;
+    /* border-radius: 32px; */
     padding: 8rem 4.5rem 6.4rem 5.2rem;
     text-align: center;
     color: var(--white-color);
-    border: 3px solid;
+    border: 2px solid transparent;
+    border-image: linear-gradient(rgba(73, 204, 249, 1),
+    rgba(163, 93, 255, 1));
+    border-image-slice: 1;
     position: relative;
     z-index: 5;
 }
@@ -314,7 +316,7 @@ body {
     padding-bottom: 16rem;
    
 }
-.prices-shape, .service-shape, .instructor-shape{
+.prices-shape, .instructor-shape{
     position: absolute;
     background-image: url('../img/bg-main-image.png');
     background-repeat: no-repeat;
@@ -405,10 +407,19 @@ body {
 /* ----- Services Section ------ */
 .bg-service{
     position: relative;
+    padding-bottom: 160px;
 }
 .service-shape{
-    top: 500px;
-    left: 55%;
+    position: absolute;
+    background-image: url('../img/bg-main-image.png');
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    width: 600px;
+    height: 600px;
+    bottom: 0;
+    right: 0;
+    opacity: 0.2;
+    z-index: -100;
 }
 .service {
     width: 80%;
@@ -500,12 +511,27 @@ body {
 
 .instructor__info__text {
     width: 600px;
-    border-radius: 32px;
-    border: 4px solid;
-    /* border-color: linear-gradient(rgba(73, 204, 249, 1),
-    rgba(163, 93, 255, 1)); */
-    padding: 4.8rem 6.4rem 4rem;
     text-align: center;
+    padding: 4.8rem 6.4rem 4rem;
+    /* border: 4px solid transparent; */
+    background: linear-gradient(rgba(73, 204, 249, 1),
+    rgba(163, 93, 255, 1));
+    border-radius: 32px;
+    /* border-image-slice: 1; */
+    position: relative;
+    z-index: 1;
+}
+.instructor__info__text::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    top: 4px;
+    left: 4px;
+    border-radius: calc(32px - 4px);
+    background: #e5e5e5;
+    z-index: -1;
 }
 
 .instructor__info__text h4 {

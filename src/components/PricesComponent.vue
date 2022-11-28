@@ -3,7 +3,9 @@
         <div class="prices-shape"></div>
         <div class="container">
           <div class="prices">
-            <div class="price">
+            <div class="price"
+            data-aos="fade-up"
+            data-aos-duration="1000">
               <div class="price-absolute">
                 <img src="@/assets/img/bg-price1.png" alt="">
               </div>
@@ -15,7 +17,9 @@
                 </p>
               </div>
             </div>
-            <div class="price">
+            <div class="price"
+            data-aos="fade-up"
+            data-aos-duration="1400">
               <div class="price-absolute">
                 <img src="@/assets/img/bg-price2.png" alt="">
               </div>
@@ -27,7 +31,9 @@
                 </p>
               </div>
             </div>
-            <div class="price">
+            <div class="price"
+            data-aos="fade-up"
+            data-aos-duration="1800">
               <div class="price-absolute">
                 <img src="@/assets/img/bg-price3.png" alt="">
               </div>

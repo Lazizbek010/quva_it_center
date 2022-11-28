@@ -6,7 +6,9 @@
       <div class="bg-course__shape2">
         <img src="@/assets/img/course-shape2.png" alt="">
       </div>
-        <div class="container">
+        <div class="container" 
+        data-aos="zoom-in-down"
+         data-aos-duration="1500">
           <h2 class="footer__titles">Что будет на курсе?</h2>
           <div class="course-items">
             <div class="course-item">

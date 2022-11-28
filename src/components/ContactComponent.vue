@@ -2,7 +2,8 @@
     <section class="bg-contact">
         <div class="container">
           <h2 class="footer__titles">Запишитесь на курс сейчас</h2>
-          <form action="#" class="form">
+          <form action="#" class="form" data-aos="zoom-in"
+           data-aos-delay="300">
             <div class="form__shape1">
               <img src="@/assets/img/formshape1.png" alt="">
             </div>
