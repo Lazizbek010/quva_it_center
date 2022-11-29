@@ -23,11 +23,11 @@
                 <div class="education-price__card__img">
                   <div class="education-price__card__header">
                     <h1 v-if="data && data.title">{{data.title}}</h1>
-                    <span class="subtitle">{{data.subTitle}}</span>
+                    <span v-if="data && data.title" class="subtitle">{{data.subTitle}}</span>
                   </div>
-                  <p>{{data.price}}</p>
+                  <p v-if="data && data.price">{{data.price}}</p>
                 </div>
-                <ul class="education-price__list">
+                <ul class="education-price__list" v-if="roles">
                   <li v-for="(role, i) in data.roles" :key="i">
                     <img src="images/check.svg" alt="">
                     <span>{{role.text}}</span>
@@ -51,7 +51,7 @@
                 </ul>
                 <button>Оплатить</button>
               </div>
-              <p class="education-price__bottom">{{data.description}}</p>
+              <p class="education-price__bottom" v-if="description">{{data.description}}</p>
             </div>
             </swiper-slide>
           <swiper-slide>
