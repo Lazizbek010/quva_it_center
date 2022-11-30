@@ -1,13 +1,13 @@
 <template>
     <section class="bg-education-price">
         <div class="container" v-if="getCostEdu">
-          <h2 class="footer__titles" v-if="eduData">{{eduData.title}}</h2>
-            <p class="education-price-discount" v-if="eduData">{{eduData.description}}</p>
+          <h2 class="footer__titles" v-if="eduData && eduData.title">{{eduData.title}}</h2>
+            <p class="education-price-discount" v-if="eduData && eduData.description">{{eduData.description}}</p>
           <div class="education-prices"
           data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000">
-        <swiper
+        <!-- <swiper
         class="swiper"
         :modules="modules"
           :slides-per-view="2"
@@ -16,9 +16,10 @@
           :pagination="{ clickable: true }"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
-        >
+        > -->
         <swiper-slide>
             <div class="education-price">
+              <h1>{{eduData}}</h1>
               <div class="education-price__card">
                 <div class="education-price__card__img">
                   <div class="education-price__card__header">
@@ -54,7 +55,7 @@
               <p class="education-price__bottom" v-if="description">{{data.description}}</p>
             </div>
             </swiper-slide>
-          <swiper-slide>
+          <!-- <swiper-slide>
             <div class="education-price">
               <div class="education-price__card">
                 <div
@@ -93,8 +94,8 @@
 брони 250 гривен, стоимость курса
 оплачивается перед первым занятием</p>
             </div>
-             </swiper-slide>
-        </swiper>
+             </swiper-slide> -->
+        <!-- </swiper> -->
         </div>
         </div>
       </section>
@@ -132,8 +133,8 @@ import 'swiper/css/scrollbar';
         getCostEdu: {}
       },
       computed: {
-        eduData() {
-          return this.getCostEdu[0] 
+        eduData() { 
+          return this.getCostEdu[0]
         }
       },
     }

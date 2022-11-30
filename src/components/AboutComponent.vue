@@ -13,6 +13,8 @@
               v-for="(data, i) in getForCourse"
               :key="i"
               :data="data"
+              data-aos="fade-up" 
+            :data-aos-duration="i*500 + 1000"
             />
           </div>
         </div>

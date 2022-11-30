@@ -5,6 +5,8 @@
       <HeroSection :getMainList="getMainList"/>
       <!--  About Section-->
       <AboutSection :getForCourse="getForCourse"/>
+      <!-- Process Section -->
+      <ProcessSection />
     </header>
     <main>
       <!-- Info Section -->
@@ -30,6 +32,7 @@
 <script>
 import HeroSection from '@/components/HeroComponent.vue'
 import AboutSection from '@/components/AboutComponent.vue'
+import ProcessSection from '@/components/ProcessComponent.vue'
 import InfoSection from '@/components/InfoComponent.vue'
 import PricesSection from '@/components/PricesComponent.vue'
 import ServiceSection from '@/components/ServiceComponent.vue'
@@ -46,6 +49,7 @@ export default {
   components: {
     HeroSection,
     AboutSection,
+    ProcessSection,
     InfoSection,
     PricesSection,
     ServiceSection,
@@ -59,15 +63,14 @@ export default {
   },
   mounted(){
     this.fetchMainList()
-     AOS.init()
-    AOS.init()
     this.fetchForCourse()
     this.fetchLearnCourse()
     this.fetchMoreInfo()
-    this.fetchCourseProgram() /* Olinmadi */
-    this.fetchCourseInstruktor() /* Olinmadi */
-    this.fetchHaveCourse() /* Olinmadi */
-    this.fetchCostEdu() /* Olinmadi */
+    this.fetchCourseProgram() 
+    this.fetchCourseInstruktor() 
+    this.fetchHaveCourse() 
+    this.fetchCostEdu() 
+    AOS.init()
   },
   computed: {
     ...mapGetters(['getMainList', 'getForCourse','getLearnCourse', 'getMoreInfo', "getCourseProgram",'getCourseInstruktor','getHaveCourse','getCostEdu'])

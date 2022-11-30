@@ -70,11 +70,11 @@
     export default {
       name: 'InfoComponent',
       props: {
-        getLearnCourse: []
+        getLearnCourse: {}
       },
       computed: {
         learnData() {
-          return this.getLearnCourse[0] 
+          return this.getLearnCourse
         }
       },
     }
