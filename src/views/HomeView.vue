@@ -26,6 +26,11 @@
       <!-- Contact Section -->
       <ContactSection />
     </footer>
+    <transition name="fade">
+    <div class="toTop" v-show="scY > 300" @click="toTop" :class="{ showToTop: showActive }">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+    </div>
+  </transition>
   </div>
 </template>
 
@@ -46,6 +51,13 @@ import AOS from "aos";
 
 export default {
   name: "HomeView",
+   data() {
+      return {
+        scTimer: 0,
+        scY: 0,
+        showActive: false,
+      }
+    },
   components: {
     HeroSection,
     AboutSection,
@@ -59,6 +71,21 @@ export default {
     ContactSection
   },
   methods: {
+    handleScroll: function () {
+        if (this.scTimer) return;
+        this.scTimer = setTimeout(() => {
+          this.scY = window.scrollY;
+          this.showActive = true
+          clearTimeout(this.scTimer);
+          this.scTimer = 0;
+        }, 100);
+      },
+      toTop: function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      },
     ...mapActions(['fetchMainList', 'fetchForCourse', 'fetchLearnCourse', 'fetchMoreInfo', "fetchCourseProgram",'fetchCourseInstruktor','fetchHaveCourse','fetchCostEdu'])
   },
   mounted(){
@@ -71,9 +98,11 @@ export default {
     this.fetchHaveCourse() 
     this.fetchCostEdu() 
     AOS.init()
+    window.addEventListener('scroll', this.handleScroll);
   },
   computed: {
     ...mapGetters(['getMainList', 'getForCourse','getLearnCourse', 'getMoreInfo', "getCourseProgram",'getCourseInstruktor','getHaveCourse','getCostEdu'])
   }
 };
 </script>
+

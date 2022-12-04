@@ -2,7 +2,7 @@
   <div class="nav">
     <div class="container navbar">
       <div class="logo">
-        <img src="images/logo.svg" alt="logo" />
+        <img src="images/logo.png" alt="logo" />
       </div>
       <div class="navbar__contact">
         <h3 v-if="getContactList">

@@ -66,6 +66,46 @@ body {
     padding: 0 10px;
 }
 
+.toTop{
+    cursor: pointer;
+    position: fixed;
+    z-index: 2000;
+    right: 25px;
+    bottom: 25px;
+    transform: translateY(-200px);
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    transition: 0.7s;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 0 6px 4px rgb(214, 214, 214);
+}
+.showToTop{
+    transform: translateY(1px);
+    transition: 0.7s;
+    visibility: visible;
+    opacity: 1;
+}
+.toTop:hover{
+    background: rgb(11, 230, 11);
+}
+.toTop:hover path{
+    fill: #FFF;
+}
+
+.toTop svg{
+    width: 30px;
+    height: 30px;
+    transition: .3s;
+}
+.toTop svg path{
+    fill: rgb(11, 230, 11);
+}
+
 .header {
     background: linear-gradient(90deg, #531ACA 0%, #6D3ADA 69.06%, #5D16D1 100%);
 }

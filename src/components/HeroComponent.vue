@@ -1,6 +1,7 @@
 <template>
   <div class="bg-hero">
     <swiper class="hero-swiper container"
+      :loop="true"
       :modules="modules"
       :slides-per-view="1"
       :space-between="300"
