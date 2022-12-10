@@ -20,7 +20,7 @@
     </main>
     <footer class="site-footer">
       <!-- Course Section -->
-      <CourseSection :getHaveCourse="getHaveCourse"/> 
+      <CourseSection :getHaveCourse="getHaveCourse"/>
       <!-- Education Section -->
       <EduPriceSection :getCostEdu="getCostEdu"/>
       <!-- Contact Section -->
@@ -31,6 +31,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
     </div>
   </transition>
+  <Loading v-if="loading" />
   </div>
 </template>
 
@@ -48,6 +49,7 @@ import ContactSection from '@/components/ContactComponent.vue'
 
 import { mapActions, mapGetters} from 'vuex'
 import AOS from "aos";
+import Loading from "@/components/Loading";
 
 export default {
   name: "HomeView",
@@ -57,9 +59,11 @@ export default {
         scY: 0,
         showActive: false,
         stickyNav: false,
+        loading: false
       }
     },
   components: {
+    Loading,
     HeroSection,
     AboutSection,
     ProcessSection,
@@ -89,17 +93,19 @@ export default {
       },
     ...mapActions(['fetchMainList', 'fetchForCourse', 'fetchLearnCourse', 'fetchMoreInfo', "fetchCourseProgram",'fetchCourseInstruktor','fetchHaveCourse','fetchCostEdu'])
   },
-  mounted(){
-    this.fetchMainList()
-    this.fetchForCourse()
-    this.fetchLearnCourse()
-    this.fetchMoreInfo()
-    this.fetchCourseProgram() 
-    this.fetchCourseInstruktor() 
-    this.fetchHaveCourse() 
-    this.fetchCostEdu() 
+  async mounted(){
+    this.loading = true
+    await this.fetchMainList()
+    await this.fetchForCourse()
+    await this.fetchLearnCourse()
+    await this.fetchMoreInfo()
+    await this.fetchCourseProgram()
+    await this.fetchCourseInstruktor()
+    await this.fetchHaveCourse()
+    await this.fetchCostEdu()
     AOS.init()
     window.addEventListener('scroll', this.handleScroll);
+    this.loading = false
   },
   computed: {
     ...mapGetters(['getMainList', 'getForCourse','getLearnCourse', 'getMoreInfo', "getCourseProgram",'getCourseInstruktor','getHaveCourse','getCostEdu'])
