@@ -7,7 +7,7 @@
           data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000">
-        <!-- <swiper
+        <swiper
         class="swiper"
         :modules="modules"
           :slides-per-view="2"
@@ -16,7 +16,7 @@
           :pagination="{ clickable: true }"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
-        > -->
+        >
         <swiper-slide>
             <div class="education-price">
               <h1>{{eduData}}</h1>
@@ -33,7 +33,7 @@
                     <img src="images/check.svg" alt="">
                     <span>{{role.text}}</span>
                   </li>
-                  <!-- <li>
+                  <li>
                     <img src="images/check.svg" alt="">
                     <span>Онлайн чат</span>
                   </li>
@@ -48,14 +48,14 @@
                   <li>
                     <img src="images/x.svg" alt="" />
                     <span>Бронирование места</span>
-                  </li> --> 
+                  </li> 
                 </ul>
                 <button>Оплатить</button>
               </div>
               <p class="education-price__bottom" v-if="description">{{data.description}}</p>
             </div>
             </swiper-slide>
-          <!-- <swiper-slide>
+          <swiper-slide class="slide2" v-for="(items, ind) in 3" :key="`slide2${ind}`">
             <div class="education-price">
               <div class="education-price__card">
                 <div
@@ -94,8 +94,8 @@
 брони 250 гривен, стоимость курса
 оплачивается перед первым занятием</p>
             </div>
-             </swiper-slide> -->
-        <!-- </swiper> -->
+             </swiper-slide>
+        </swiper>
         </div>
         </div>
       </section>

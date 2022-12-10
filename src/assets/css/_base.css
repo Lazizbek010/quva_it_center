@@ -72,26 +72,17 @@ body {
     z-index: 2000;
     right: 25px;
     bottom: 25px;
-    transform: translateY(-200px);
-    background: #fff;
+    background: linear-gradient(to right, rgba(137, 48, 253, 1), rgba(73, 204, 249, 1));
     width: 50px;
     height: 50px;
     border-radius: 5px;
     display: grid;
     place-items: center;
     transition: 0.7s;
-    visibility: hidden;
-    opacity: 0;
     box-shadow: 0 0 6px 4px rgb(214, 214, 214);
 }
-.showToTop{
-    transform: translateY(1px);
-    transition: 0.7s;
-    visibility: visible;
-    opacity: 1;
-}
 .toTop:hover{
-    background: rgb(11, 230, 11);
+    background-size: 200%;
 }
 .toTop:hover path{
     fill: #FFF;
@@ -103,7 +94,7 @@ body {
     transition: .3s;
 }
 .toTop svg path{
-    fill: rgb(11, 230, 11);
+    fill: #fff;
 }
 
 .header {

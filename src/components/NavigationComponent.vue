@@ -1,8 +1,8 @@
 <template>
-  <div class="nav">
+  <div class="nav" :class='{show: scroll}'>
     <div class="container navbar">
       <div class="logo">
-        <img src="images/logo.png" alt="logo" />
+        <img src="images/logo1.png" alt="logo" />
       </div>
       <div class="navbar__contact">
         <h3 v-if="getContactList">
@@ -35,11 +35,25 @@ import { mapGetters, mapActions} from 'vuex'
 
 export default {
   name: "NAvigationComponent",
+  data() {
+    return {
+      scroll: false
+    }
+  },
   computed: {
     ...mapGetters(["getContactList"]),
   },
   mounted() {
     this.fetchContacts();
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 200){
+        this.scroll = true
+        console.log(1);
+      } else {
+        this.scroll = false
+        console.log(0);
+      }
+    })
   },
   methods: {
     ...mapActions(["fetchContacts"]),
@@ -47,4 +61,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.nav.show{
+  background: red;
+}
+</style>
