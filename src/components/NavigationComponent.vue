@@ -48,10 +48,8 @@ export default {
     window.addEventListener('scroll', () => {
       if(window.scrollY > 200){
         this.scroll = true
-        console.log(1);
       } else {
         this.scroll = false
-        console.log(0);
       }
     })
   },
@@ -63,6 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav.show{
-  background: red;
+  backdrop-filter: blur(5px);
+  background: rgba(113, 56, 226, 0.5);
 }
 </style>

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'https://foritcenter.herokuapp.com/api/client/'
+const baseURL = 'https://quvaitcenter.uz/api/client'
 
 const api = axios.create({
     baseURL,
