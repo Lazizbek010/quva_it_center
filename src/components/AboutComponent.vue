@@ -7,7 +7,7 @@
           <div class="about-shape2">
             <img src="@/assets/img/formshape2.png" alt="">
           </div>
-          <h1 class="about__title">Кому подойдет этот курс?</h1>
+          <h1 class="about__title">Bu kurs kim uchun?</h1>
           <div class="about__info">
             <AboutComponentCard 
               v-for="(data, i) in getForCourse"

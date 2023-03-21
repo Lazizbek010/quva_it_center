@@ -1,90 +1,62 @@
 <template>
-  <div class="bg-hero">
-    <swiper class="hero-swiper container"
+  <div class="bg-hero" v-if="getMainList && getMainList.length">
+   <div class="swiper-container">
+     <swiper
+      class="hero-swiper container"
       :loop="true"
       :modules="modules"
       :slides-per-view="1"
       :space-between="300"
+      :autoplay="{
+        delay: 5000,
+        disableOnInteraction: false,
+      }"
       navigation
       :pagination="{ clickable: true }"
       @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
-    <swiper-slide class="container hero" v-if="getMainList && getMainList.length">
-      <div class="hero__left"
-      data-aos="fade-right"
+      <swiper-slide
+        class="container hero"
+        v-for="(slide, i) in getMainList" :key="i"
+      >
+        <div
+          class="hero__left"
+          data-aos="fade-right"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
-          data-aos-duration="1500">
-        <h1>{{getMainList[0].title}}</h1>
-        <p>
-          {{getMainList[0].description}}
-        </p>
-        <div class="hero__btns">
-          <button>Записаться на курс</button>
-          <button>Узнать больше</button>
+          data-aos-duration="1500"
+        >
+          <h1>{{ slide.title }}</h1>
+          <p>
+            {{ slide.description }}
+          </p>
+          <div class="hero__btns">
+           <a href="#register">
+             <button>Kursga yozilish</button>
+           </a>
+           <a target="_blank" href="https://telegra.ph/IT-CENTER-QUVA-TUMANI-08-30">
+            <button>Qo'shimcha ma'lumot</button>
+           </a>
+          </div>
         </div>
-      </div>
-      <div class="hero__right"
-      data-aos="fade-left"
+        <div
+          class="hero__right"
+          data-aos="fade-left"
           data-aos-anchor="#example-anchor"
-          data-aos-duration="1500">
-        <!-- Rasmni APIdan olish   -->
-        <img  src="images/hero-img.png" alt="hero-img" />
-      </div>
-    </swiper-slide>
-     <swiper-slide class="container hero" v-if="getMainList && getMainList.length">
-      <div class="hero__left"
-      data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="1500">
-        <h1>{{getMainList[0].title}}</h1>
-        <p>
-          {{getMainList[0].description}}
-        </p>
-        <div class="hero__btns">
-          <button>Записаться на курс</button>
-          <button>Узнать больше</button>
+          data-aos-duration="1500"
+        >
+          <!-- Rasmni APIdan olish   -->
+          <img :src="slide.image" alt="hero-img" />
         </div>
-      </div>
-      <div class="hero__right"
-      data-aos="fade-left"
-          data-aos-anchor="#example-anchor"
-          data-aos-duration="1500">
-        <!-- Rasmni APIdan olish   -->
-        <img  src="images/hero-img.png" alt="hero-img" />
-      </div>
-    </swiper-slide>
-     <swiper-slide class="container hero" v-if="getMainList && getMainList.length">
-      <div class="hero__left"
-      data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="1500">
-        <h1>{{getMainList[0].title}}</h1>
-        <p>
-          {{getMainList[0].description}}
-        </p>
-        <div class="hero__btns">
-          <button>Записаться на курс</button>
-          <button>Узнать больше</button>
-        </div>
-      </div>
-      <div class="hero__right"
-      data-aos="fade-left"
-          data-aos-anchor="#example-anchor"
-          data-aos-duration="1500">
-        <!-- Rasmni APIdan olish   -->
-        <img  src="images/hero-img.png" alt="hero-img" />
-      </div>
-    </swiper-slide>
+      </swiper-slide>
     </swiper>
+   </div>
   </div>
 </template>
 
 <script>
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -92,14 +64,14 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export default {
-    name: 'HeroComponent',
-    props: {
-      getMainList: {
-        type: Array,
-        required: true
-      },
+  name: "HeroComponent",
+  props: {
+    getMainList: {
+      type: Array,
+      required: true,
     },
-    components: {
+  },
+  components: {
     Swiper,
     SwiperSlide,
   },
@@ -113,15 +85,15 @@ export default {
     return {
       onSwiper,
       onSlideChange,
-      modules: [Navigation, Pagination, Scrollbar, A11y],
+      modules: [Autoplay, Navigation, Pagination, Scrollbar, A11y],
     };
   },
 };
 </script>
 
 <style scoped>
-  .hero-swiper{
-    display: flex;
-    justify-content: center;
-  }
+.hero-swiper {
+  display: flex;
+  justify-content: center;
+}
 </style>

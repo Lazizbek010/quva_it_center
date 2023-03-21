@@ -110,7 +110,18 @@ body {
     justify-content: space-between;
     padding: 0 2rem;
 }
-
+.swiper-container{
+    position: relative;
+}
+.swiper-container .hero-swiper{
+    position: initial !important;
+}
+.swiper-container .hero-swiper .swiper-button-prev{
+    left: 80px;
+}
+.swiper-container .hero-swiper .swiper-button-next{
+    right: 80px;
+}
 .hero__left {
     color: var(--white-color);
 }
@@ -351,7 +362,17 @@ body {
     color: var(--white-color);
     opacity: 0.9;
 }
-
+.info__right__list li img{
+    animation: rounded infinite linear 4s;
+}
+/* @keyframes rounded{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+} */
 /* -------Prices Section------ */
 .bg-prices {
     position: relative;
@@ -680,7 +701,7 @@ body {
     text-align: center;
     font-size: 4.8rem;
     line-height: 56px;
-    margin-bottom: 12rem;
+    margin-bottom: 6rem;
     color: var(--white-color);
 }
 
@@ -853,7 +874,7 @@ body {
     line-height: 40px;
     letter-spacing: 0.25px;
     color: #FFFFFF;
-    margin-bottom: 55px;
+    margin-bottom: 25px;
 }
 
 .education-price__card__img p {

@@ -1,14 +1,14 @@
 <template>
-  <div class="bg-instructor">
+  <div class="bg-instructor" v-if="getCourseInstruktor">
     <div class="instructor-shape"></div>
-    <h2 class="instructor__title">Преподаватель курса</h2>
+    <h2 class="instructor__title">Bizning Ustozlar!</h2>
     <swiper :navigation="true" :modules="modules" class="insSwiper">
       <swiper-slide
         class="ins__slide"
-        v-for="(slide, i) in 3"
+        v-for="(slide, i) in getCourseInstruktor"
         :key="`ins__slide${i}`"
       >
-        <div class="instructor__info container" v-if="getCourseInstruktor">
+        <div class="instructor__info container" >
           <div
             class="instructor__info__text"
             data-aos="zoom-in-right"
@@ -25,10 +25,6 @@
             </p>
             <p class="instructor__info__contects">
               {{ getCourseInstruktor.description }}
-              <!-- <span>Team Lead</span> в американском агенстве
-                интернет-маркетинга <span>“Cash Offer Option”</span> <br />
-                Входит в <span>ТОП-50</span> специалистов по Контекстной рекламе
-                в СНГ (по рейтингу платформы <span>Freelancehunt)</span> -->
             </p>
           </div>
           <div
@@ -53,7 +49,7 @@ import { Navigation } from "swiper";
 export default {
   name: "Instructorcomponent",
   props: {
-    getCourseInstruktor: {},
+    getCourseInstruktor: [],
   },
   components: {
     Swiper,

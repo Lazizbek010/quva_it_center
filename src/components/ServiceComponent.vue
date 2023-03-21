@@ -20,42 +20,6 @@
                 <img src="images/down.svg " alt="" />
               </div>
             </li>
-            <!-- <li class="service__list__item">
-              <div class="service__list__item-left">
-                <span>2 модуль</span>
-                <span class="service__list__item-left-about">Основы работы с Поисковыми рекламными кампаниями</span>
-              </div>
-              <div>
-                <img src="images/down.svg " alt="" />
-              </div>
-            </li>
-            <li class="service__list__item">
-              <div class="service__list__item-left">
-                <span>3 модуль</span>
-                <span class="service__list__item-left-about">Работа с интерфейсом Google Adwords</span>
-              </div>
-              <div>
-                <img src="images/down.svg " alt="" />
-              </div>
-            </li>
-            <li class="service__list__item">
-              <div class="service__list__item-left">
-                <span>4 модуль</span>
-                <span class="service__list__item-left-about">Практическое занятие</span>
-              </div>
-              <div>
-                <img src="images/down.svg " alt="" />
-              </div>
-            </li>
-            <li class="service__list__item">
-              <div class="service__list__item-left">
-                <span>5 модуль</span>
-                <span class="service__list__item-left-about">Домашнее задание</span>
-              </div>
-              <div>
-                <img src="images/down.svg " alt="" />
-              </div>
-            </li> -->
           </ul>
         </div>
       </div>

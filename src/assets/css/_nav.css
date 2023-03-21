@@ -32,7 +32,7 @@
     width: 20px;
     height: 20px;
 }
-.navbar__contact h3 span{
+.navbar__contact h3 a, .navbar__contact h3 span{
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.25px;

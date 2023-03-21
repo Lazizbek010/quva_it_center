@@ -23,7 +23,7 @@
               opacity=".9"
             />
           </svg>
-          <span>Записаться на курс</span>
+          <a href="#register">Kursga yozilish</a>
         </h3>
       </div>
     </div>

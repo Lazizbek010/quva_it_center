@@ -103,7 +103,6 @@ export default createStore({
       try{
         const {data} = await api.get('/course-program')
         commit('SET_COURSE_PROGRAM', data)
-        console.log(data);
       }catch(err){
         console.error(err, 'course-program xatosi');
       }
@@ -112,6 +111,7 @@ export default createStore({
       try{
         const {data} = await api.get('/course-instructor')
         commit('SET_COURSE_INSTRUKTOR', data)
+        console.log(data);
       }catch(err){
         console.error(err, 'course-instruktor xatosi');
       }
